@@ -4,7 +4,7 @@ html {
 
 @media screen and (min-width: 600px) {
     html {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
@@ -45,15 +45,27 @@ a:hover {
 }
 
 ul#langselect {
-    text-align: right;
+    float: right;
     line-height: 2em;
 }
 
-li.lang, li.contact-link, li.contact-link-title {
+li.lang, #contacts>li, #filterselect>li {
     display: inline-block;
 }
 
-li.contact-link-title, li.contact-link {
+li.filtertag {
+    padding: .4em;
+    margin: .2em;
+    background: #e0e0e0;
+    border-radius: 2px;
+}
+
+li.filtertag.active {
+    color: #ffffff;
+    background: #404040;
+}
+
+#contacts>li {
     line-height: 2rem;
     font-size: 1.1rem;
 }
@@ -69,6 +81,7 @@ li.contact-link {
 ul#projects {
     font-size: 0;
     margin: .5rem 0;
+    text-align: center;
 }
 
 li.project {
@@ -77,10 +90,10 @@ li.project {
     box-shadow: 1px 1px 3px #808080;
     position: relative;
     height: 200px;
-    max-height: 300px;
+    max-height: 320px;
     width: 200px;
     overflow: hidden;
-    margin: .5rem 1rem .5rem 0;
+    margin: .5rem;
     background: #ffffff;
     transition: width .5s, height .5s;
 }
@@ -89,6 +102,12 @@ li.project.show-detail {
     width: 100%;
     height: auto;
     margin: .5rem 0;
+}
+
+li.project.hidden {
+    width: 0;
+    height: 0;
+    margin: 0;
 }
 
 div.project-image {
@@ -112,7 +131,7 @@ h3.project-title {
     padding: 8px;
     color: #202060;
     text-shadow: 0 1px 1px #ffffff;
-    background: rgba(255,255,200,.9);
+    background: rgba(255,255,200,.7);
 }
 
 div.project-contents {
@@ -143,7 +162,6 @@ div.project-contents {
     .show-detail h3.project-title {
         position: inherit;
         float: left;
-        margin-bottom: 10px;
     }
 }
 

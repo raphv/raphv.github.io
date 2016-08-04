@@ -44,5 +44,24 @@ $(function() {
         return false;
     });
     
+    var currentTag = null;
+    
+    $("li.filtertag").click(function() {
+        var $this = $(this);
+        $("li.filtertag").removeClass("active");
+        var tag = $this.attr("tag-id");
+        if (currentTag === tag) {
+            currentTag = null;
+            $("li.project").removeClass("hidden");
+        } else {
+            currentTag = tag;
+            $this.addClass("active");
+            $("li.project").addClass("hidden");
+            $("li.project-metadata[tag-id='" + tag + "']").parents("li.project").removeClass("hidden");
+            $("li.project.hidden").removeClass("show-detail");
+        }
+        return false;
+    });
+    
     refreshLanguage();
 });
