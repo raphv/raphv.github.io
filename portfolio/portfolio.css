@@ -4,12 +4,12 @@ html {
 
 @media screen and (min-width: 600px) {
     html {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 
 body {
-    font-family: "Open Sans";
+    font-family: "Raleway";
     background: #FFFFFF;
 }
 
@@ -18,21 +18,24 @@ header {
     border-bottom: 2px solid #ccc;
 }
 
+em {
+    font-style: italic;
+}
+
 h1 {
     padding: 1rem;
     color: #ffffff;
     font-size: 1.3rem;
     font-weight: 800;
-    max-width: 1080px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
 div#main {
-    max-width: 1080px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: .5rem 1rem;
-    background: #f0f0ff;
-    box-shadow: 0 0 2px #808080;
+    padding: 1rem;
+    background: #f8f8ff;
 }
 
 a {
@@ -80,7 +83,7 @@ li.contact-link {
 
 ul#projects {
     font-size: 0;
-    margin: .5rem 0;
+    margin: 1rem 0;
     text-align: center;
 }
 
@@ -93,7 +96,7 @@ li.project {
     max-height: 320px;
     width: 200px;
     overflow: hidden;
-    margin: .5rem;
+    margin: .75rem;
     background: #ffffff;
     transition: width .5s, height .5s;
 }
@@ -131,7 +134,7 @@ h3.project-title {
     padding: 8px;
     color: #202060;
     text-shadow: 0 1px 1px #ffffff;
-    background: rgba(255,255,200,.7);
+    background: rgba(255,255,240,.8);
 }
 
 div.project-contents {

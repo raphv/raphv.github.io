@@ -33,15 +33,31 @@ $(function() {
     
     var $w = $(window);
     
-    $("div.project-image, h3.project-title").click(function() {
-        var $p = $(this).parent();
-        var isdet = $p.hasClass("show-detail");
-        $("li.project").removeClass("show-detail");
-        $p.toggleClass("show-detail",!isdet);
-        $('html, body').animate({
-            'scrollTop': ($p.offset().top + $p.height()/2 - $w.height() / 2)
-        }, 500);
-        return false;
+    $("li.project").each(function() {
+        var $t = $(this);
+        var idhash = '#' + $t.attr("id");
+        $t.find("a[href='#']").attr("href", idhash);
+    });
+    
+    function openHash() {
+        var $p = $(document.location.hash);
+        if ($p.is("li.project")) {
+            var isdet = $p.hasClass("show-detail");
+            $("li.project").removeClass("show-detail");
+            $p.toggleClass("show-detail",!isdet);
+            $('html, body').animate({
+                'scrollTop': ($p.offset().top + $p.height()/2 - $w.height() / 2)
+            }, 500);
+        }
+    }
+    
+    $w.on("hashchange", openHash);
+    
+    $("ul#projects").click(function(e) {
+        if (e.target === this) {
+            document.location.hash = '';
+            $("li.project").removeClass("show-detail");
+        }
     });
     
     var currentTag = null;
@@ -64,4 +80,7 @@ $(function() {
     });
     
     refreshLanguage();
+    
+    openHash();
+    
 });
