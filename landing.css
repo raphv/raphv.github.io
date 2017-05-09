@@ -1,0 +1,132 @@
+body {
+    font-size: 20px;
+    font-family: "Raleway";
+    background: #FFFFFF;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: .5;
+}
+
+header {
+    background: #309060;
+    border-bottom: 2px solid #ccc;
+}
+
+div#main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f0f0ff;
+    border-width: 0 20px;
+    border-style: none solid;
+    border-color: #ffffff;
+}
+
+h1 {
+    margin: 0 auto;
+    padding: 20px 50px;
+    max-width: 960px;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+div.description {
+    font-family: "Libre Baskerville";
+    font-size: 18px;
+    line-height: 1.3em;
+    margin: 15px 10px;
+}
+
+.description p {
+    margin: 8px 0;
+}
+
+#links {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    clear: both;
+}
+            
+#links li {
+    float: left;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 1px 1px 1px #ccc;
+    width: 220px;
+}
+
+#links a {
+    display: table;
+}
+
+#links span, #links i {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 550px) {
+    #links {
+        padding: 0 10px;
+    }
+    
+    #links li {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+#links i {
+    font-size: 1.5em;
+    width: 1.5em;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+#links span {
+    text-decoration: underline;
+}
+
+html[lang=en] div.description[lang=fr],
+html[lang=fr] div.description[lang=en],
+html[lang=en] #links span[lang=fr],
+html[lang=fr] #links span[lang=en] {
+    display: none;
+}
+
+#lang-selector {
+    font-size: 20px;
+    margin: 5px 10px;
+}
+
+#lang-selector li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+html[lang=en] #lang-selector li[lang=en],
+html[lang=fr] #lang-selector li[lang=fr] {
+    font-weight: 800;
+}
+
+html[lang=en] #lang-selector li[lang=fr],
+html[lang=fr] #lang-selector li[lang=en] {
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+footer {
+    text-align: right;
+    font-size: 12px;
+    margin: 40px 10px 0;
+}
