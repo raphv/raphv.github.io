@@ -22,37 +22,43 @@
                 </a>
             </h1>
         </header>
-        <div id="main">
+        <main>
             <ul id="lang-selector">
-                <li><i class="fa fa-flag-o"></i></li>
-                <li lang="en">English</li>
-                <li lang="fr">Français</li>
+                <li>
+					<i class="fa fa-flag-o"></i>
+					<span class="translate" lang="en">Language:</span>
+					<span class="translate" lang="fr">Langue:</span>
+				</li>
+                <li>
+					<a href="#" lang="en">English</a>
+				</li>
+                <li>
+					<a href="#" lang="fr">Français</a>
+				</li>
             </ul>
-            <div class="description" lang="en">
+            <section class="description translate" lang="en">
                 <p>Hello!</p>
-                <p>I’m currently looking for a job after having passed my PhD and worked as a Digital Research Specialist at the University of Nottingham.</p>
-                <p>During my thesis in Human-Computer Interaction (HCI) at the Mixed Reality Lab, I have been developing tools, methods and processes to design complex cross-media experiences, supported by HCI theoretical knowledge.</p>
-                <p>My skills span project management, user experience design (UXD), information architecture (IA) and full-stack web development.</p>
-            </div>
-            <div class="description" lang="fr">
+                <p>I’m currently teaching at Breda University of Applied Sciences. Before that, I worked as a web designer and developer at IRI in Paris, then did a PhD in Human-Computer Interaction and worked as a Digital Research Specialist at the University of Nottingham.</p>
+                <p>My skills span project teaching, research, management, user experience design (UXD), information architecture (IA) and full-stack web development.</p>
+            </section>
+            <section class="description translate" lang="fr">
                 <p>Bonjour&nbsp;!</p>
-                <p>Je suis actuellement en recherche d’emploi après avoir passé mon doctorat et travaillé en tant que Spécialiste en Recherche Numérique à l’Université de Nottingham (Royaume-Uni).</p>
-                <p>Au cours de mon doctorat en Interaction Homme-Machine (IHM) au Mixed Reality Lab, j’ai développé des outils, méthodes et processus pour le design d’interaction cross-médias, avec l’aide de connaissances théoriques en IHM</p>
-                <p>Mes compétences couvrent la gestion de projets, la conception d’expérience utilisateur (UXD), l'architecture informationnelle (IA) et le développement web &laquo;&nbsp;full-stack&nbsp;&raquo;.</p>
-            </div>
+                <p>Je suis enseignant à l’Université de Sciences Appliquées de Bréda (Pays-Bas). J’ai précédemment travaillé en que designer et développeur web à l’IRI à Paris, puis j’ai effectué un doctorat en Interaction Homme-Machine et travaillé en tant que Spécialiste en Recherche Numérique à l’Université de Nottingham (Royaume-Uni).</p>
+                <p>Mes compétences incluent l’enseignement, la recherche, la gestion de projets, la conception d’expérience utilisateur (UXD), l'architecture informationnelle (IA) et le développement web &laquo;&nbsp;full-stack&nbsp;&raquo;.</p>
+            </section>
             <ul id="links">
                 <li>
                     <a href="https://raphv.github.io/portfolio/">
                         <i class="fa fa-files-o"></i>
-                        <span lang="en">My Portfolio</span>
-                        <span lang="fr">Mon Portfolio</span>
+                        <span class="translate" lang="en">My Portfolio</span>
+                        <span class="translate" lang="fr">Mon Portfolio</span>
                     </a>
                 </li>
                 <li>
                     <a href="mailto:raph.velt+via.portfolio@gmail.com" target="_blank">
                         <i class="fa fa-envelope-o"></i>
-                        <span lang="en">Email me</span>
-                        <span lang="fr">Envoyez-moi un courriel</span>
+                        <span class="translate" lang="en">Email me</span>
+                        <span class="translate" lang="fr">Envoyez-moi un courriel</span>
                     </a>
                 </li>
                 <li>
@@ -79,25 +85,13 @@
                         <span>ORCID</span>
                     </a>
                 </li>
-                <li>
-                    <a href="https://www.flickr.com/photos/raph-v" target="_blank">
-                        <i class="fa fa-flickr"></i>
-                        <span>Flickr</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/raphv_/" target="_blank">
-                        <i class="fa fa-instagram"></i>
-                        <span>Instagram</span>
-                    </a>
-                </li>
             </ul>
             <footer>
                 &copy; Raphaël Velt 2016-2017
             </footer>
-        </div>
+        </main>
         <script>
-            Array.from(document.querySelectorAll("#lang-selector li[lang]")).forEach(function(li) {
+            Array.from(document.querySelectorAll("#lang-selector a[lang]")).forEach(function(li) {
                 li.addEventListener('click', function() {
                     document.querySelector('html').setAttribute('lang',li.getAttribute('lang'));
                 });
