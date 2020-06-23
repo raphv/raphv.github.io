@@ -80,11 +80,13 @@ a:hover {
 	display: flex;
     line-height: 2rem;
     font-size: 1.1rem;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .contact-link {
     padding: 0 .5rem;
-    margin: .15rem .2rem .15rem 0;
+    margin: .15rem .2rem;
     background: #603090;
     color: #ffffff;
     border-radius: .3rem;
