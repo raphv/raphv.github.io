@@ -31,7 +31,7 @@ h1 {
     margin: 0 auto;
 }
 
-div#main {
+main {
     max-width: 1120px;
     margin: 0 auto;
     padding: 1rem;
@@ -47,33 +47,42 @@ a:hover {
     opacity: .5;
 }
 
-ul#langselect {
-    float: right;
+#langselect {
+	display: flex;
+	justify-content: flex-end;
     line-height: 2em;
 }
 
-li.lang, #contacts>li, #filterselect>li {
-    display: inline-block;
+#langselect li {
+	margin-left: 5px;
 }
 
-li.filtertag {
+#filterselect {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.filtertag {
     padding: .4em;
     margin: .2em;
     background: #e0e0e0;
     border-radius: 2px;
+	flex-grow: 1;
 }
 
-li.filtertag.active {
+.filtertag.active {
     color: #ffffff;
     background: #404040;
 }
 
-#contacts>li {
+#contacts {
+	display: flex;
     line-height: 2rem;
     font-size: 1.1rem;
 }
 
-li.contact-link {
+.contact-link {
     padding: 0 .5rem;
     margin: .15rem .2rem .15rem 0;
     background: #603090;
@@ -81,16 +90,17 @@ li.contact-link {
     border-radius: .3rem;
 }
 
-ul#projects {
+#projects {
     font-size: 0;
     margin: 1rem 0;
-    text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-li.project {
+.project {
     font-size: 1rem;
-    display: inline-block;
-    box-shadow: 1px 1px 3px #808080;
+    box-shadow: 1px 1px 2px #999;
     position: relative;
     height: 200px;
     max-height: 320px;
@@ -99,31 +109,31 @@ li.project {
     margin: .75rem;
     background: #ffffff;
     transition: width .5s, height .5s;
+	display: flex;
 }
 
-li.project.show-detail {
+.project.show-detail {
     width: 100%;
     height: auto;
     margin: .5rem 0;
 }
 
-li.project.hidden {
+.project.hidden {
     width: 0;
     height: 0;
     margin: 0;
 }
 
-div.project-image {
-    float: left;
-    width: 200px;
+.project-image {
     height: 200px;
+	flex-basis: 0 0 200px;
 }
 
-div.project-image img {
+.project-image img {
     max-width: 100%;
 }
 
-h3.project-title {
+.project-title {
     font-size: 1.1em;
     font-weight: 800;
     position: absolute;
@@ -137,55 +147,45 @@ h3.project-title {
     background: rgba(255,255,240,.8);
 }
 
-div.project-contents {
+.project-contents {
     opacity: 0;
-    padding: 10px;
     transition: opacity 1s;
     overflow: auto;
+	max-height: 200px;
+	width: 0;
+}
+	
+.show-detail .project-contents {
+    opacity: 1;
+	flex-grow: 1;
 }
 
-.show-detail div.project-contents {
-    opacity: 1;
+.project-description {
+    line-height: 1.2em;
+    margin: 10px;
 }
 
 @media screen and (max-width: 479px) {
-    
-    li.project {
-        max-width: 100%;
-    }
-    
-    .show-detail div.project-image {
+        
+    .show-detail .project-image {
         display: none;
     }
-    
-    div.project-contents {
-        clear: both;
-    }
-    
-    .show-detail h3.project-title {
-        position: inherit;
-        float: left;
-    }
+	
+	.project-title {
+		width: 100%;
+	}
+	
+	.project-description {
+		margin-top: 50px;
+	}
 }
 
 @media screen and (min-width: 480px) {
-    li.project {
+    .project {
         width: 200px;
         height: 200px;
     }
-    
-    div.project-contents {
-        position: absolute;
-        left: 200px;
-        right: 0;
-        bottom: 0;
-        max-height: 180px;
-    }
-}
-
-div.project-description {
-    line-height: 1.2em;
-    margin: 0 0 5px;
+  
 }
 
 .project-description a {
@@ -197,12 +197,14 @@ div.project-description {
     text-decoration: none;
 }
 
-ul.project-links {
-    margin: 5px 0;
+.project-links, .project-metadata-list {
+    margin: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-li.project-link {
-    display: inline-block;
+.project-link {
     padding: 5px;
     margin: 2px 3px 2px 0;
     background: #903030;
@@ -210,28 +212,23 @@ li.project-link {
     border-radius: 3px;
 }
 
-li.project-metadata {
+.project-metadata {
     font-style: italic;
-    display: inline-block;
     padding: 4px;
     margin: 2px 4px 2px 0;
     background: #e0e0e0;
     border-radius: 2px;
 }
 
-li.tag {
+.multilang {
     display: inline;
 }
 
-ul.multilang {
+.multilang li {
     display: inline;
 }
 
-.multilang li[lang] {
-    display: inline;
-}
-
-.multilang li[lang].inactive-language {
+li.inactive-language {
     display: none;
 }
 

@@ -95,13 +95,13 @@ html[lang=fr] .translate[lang=en] {
     margin-right: 10px;
 }
 
-html[lang=en] #lang-selector li[lang=en],
-html[lang=fr] #lang-selector li[lang=fr] {
+html[lang=en] #lang-selector a[lang=en],
+html[lang=fr] #lang-selector a[lang=fr] {
     font-weight: 800;
 }
 
-html[lang=en] #lang-selector li[lang=fr],
-html[lang=fr] #lang-selector li[lang=en] {
+html[lang=en] #lang-selector a[lang=fr],
+html[lang=fr] #lang-selector a[lang=en] {
     border-bottom: 1px solid;
     cursor: pointer;
 }
